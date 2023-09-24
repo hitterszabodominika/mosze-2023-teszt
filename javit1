@@ -1,0 +1,19 @@
+# Hozzunk létre egy új munkaágat
+git checkout -b hibajavitas
+
+# Nyissa meg a main.cpp fájlt egy szövegszerkesztőben és javítsa ki a hibákat
+
+# Adjuk hozzá a javított fájlt a stage-hez
+git add main.cpp
+
+# Commitoljuk a változást
+git commit -m "Hibák kijavítva"
+
+# Váltunk vissza a főágra
+git checkout main
+
+# Merge-öljük be a munkaágat a főágba
+git merge hibajavitas
+
+# Push-oljuk a változást a távoli repository-ba
+git push origin main
