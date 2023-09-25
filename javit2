@@ -1,0 +1,40 @@
+#include <iostream>
+
+constexpr int N_ELEMENTS = 100;
+
+int main()
+{
+    // Hiba 1: Az N_ELEMENTS helyesen van definiálva, de elírva a változó neve.
+    int *b = new int[N_ELEMENTS];
+
+    std::cout << "1-100 ertekek duplazasa" << std::endl; // Hiba 2: Hiányzott a pontosvessző, és az üzenet lezárása.
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiba 3: A for ciklusnak a feltételében voltak hiányzó értékek.
+    {
+        b[i] = i * 2;
+    }
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiba 4: A ciklus feltételét és az inkrementálást is helyesen kell beállítani.
+    {
+        // Hiba 5: A "Ertek:" üzenet eléjére a kettőspont és a változó értékét is ki kell írni.
+        std::cout << "Ertek: " << b[i] << std::endl;
+    }
+
+    std::cout << "Atlag szamitasa: " << std::endl;
+
+    int atlag = 0; // Hiba 6: Az "atlag" változót inicializálni kell.
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiba 7: A ciklus feltételét és az inkrementálást is helyesen kell beállítani.
+    {
+        atlag += b[i]; // Hiba 8: A változókat és a kifejezéseket pontosvesszővel kell befejezni.
+    }
+
+    atlag /= N_ELEMENTS;
+
+    std::cout << "Atlag: " << atlag << std::endl;
+    
+    // Hiba 9: Hiányzott a dinamikusan foglalt memória felszabadítása.
+    delete[] b;
+
+    return 0;
+}
