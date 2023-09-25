@@ -21,5 +21,7 @@ int main()
         atlag += b[i];
     }
     atlag /= N_ELEMENTS;
-    std::cou
+    std::cout << "Atlag: " << atlag << std::endl;
+    std::cout << "Random szoveg" << std::endl;
+    return 0;
 }
